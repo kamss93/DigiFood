@@ -1,0 +1,11 @@
+<img *ngIf="loader" src="assets/img/loader.gif" class="loader">
+<div *ngIf="!loader">
+<article *ngFor="let product of products" >
+    <img src="{{product.picture}}" />
+    <h4>{{product.name}}</h4>
+    <p>{{product.description}}</p>
+    <span>Prix : {{product.price}} €</span>
+    <button class="btn btn-success" (click)="addCart(product.id)" >Ajouter au panier</button>
+</article>
+</div>
+  

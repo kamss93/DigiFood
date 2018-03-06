@@ -1,0 +1,40 @@
+<h2>Mon panier</h2>
+<div *ngIf="cartProducts.length > 0">
+  <table class="table table-striped" >
+      <thead>
+          <tr>
+            <th scope="col">Produit</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let cartProduct of cartProducts" >
+          <td>{{cartProduct.name}}</td>
+          <td>{{cartProduct.quantity}}</td>
+          <td>{{cartProduct.price}} €</td>
+          <td>
+              <i class="fas fa-plus actionIcon" (click)="addCart(cartProduct)" ></i> 
+              <i class="fas fa-trash actionIcon" (click)="deleteCart(cartProduct)"></i> 
+              <i class="fas fa-minus actionIcon" (click)="minusCart(cartProduct)" ></i> 
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="totalCart" >
+          <td></td>
+          <td  style="text-align:right" >Total :</td>
+          <td  style="text-align:center" >{{cartTotalPrice}} €</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <br>
+    <button class="btn btn-success" style="float:right">Commander</button>
+  </div>
+
+  <div class="alert alert-info" *ngIf="cartProducts.length == 0">
+    <p>Le panier est vide </p>
+    <a href="#" routerLink="/" style="float:right;">Retour</a><br>
+  </div>

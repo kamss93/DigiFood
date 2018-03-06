@@ -1,0 +1,153 @@
+header nav {
+    background-color: #2a99ea;
+    padding:10px 0;
+}
+
+header nav ul {
+    color:white;
+}
+
+header nav ul li a{
+    color:currentColor;
+}
+
+#cart{
+    position: absolute;
+    top:9px;
+    right:30px;
+    padding: 8px;
+    border: 1px solid #8cbee3;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#cart:hover .content{
+    display: block;
+}
+
+#cart p{
+    margin:0;
+    color: white;
+    position: relative;
+}
+
+#productsNumber{
+    position: absolute;
+    top: -17px;
+    left: -19px;
+    background: white;
+    color: #2a99ea;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 100%;
+    font-size: 13px;
+}
+
+#cart .content{
+    position: absolute;
+    top:42px;
+    right:0;
+    background: white;
+    width:250%;
+    box-shadow:1px 1px 1px rgba(0,0,0,0.5);
+    border-radius:3px;
+    border:1px solid #dedddd;
+    padding:10px;
+    display: none;
+}
+
+#cart .content ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color:#545252;
+}
+
+#cart .content ul li{
+    border-bottom:1px solid #e8e8e8;
+    padding:5px 0;
+}
+
+#cart .content ul li:last-child{
+    border-bottom:0;
+}
+
+.totalCart{
+    color:white !important;
+    background-color:#2a99ea;
+    padding:5px;
+    text-align: right;
+}
+
+.cartProductAction{
+    padding:0 5px;
+    font-size:20px;
+    border:1px solid gray;
+    border-radius:5px;
+    line-height:20px;
+    margin:0 1%;
+}
+
+.actionIcon{
+    cursor: pointer;
+    margin:0 1%;
+}
+
+.actionIcon:first-child{
+    color:green;
+}
+
+.actionIcon:nth-child(2){
+    color:red;
+}
+
+.actionIcon:last-child{
+    color:orange;
+}
+
+.actionIcon:first-child,
+.actionIcon:last-child{
+    font-size:13px;
+}
+
+#container{
+    margin-top:20px;
+}
+
+#container .nav .active{
+    background: #2a99ea;
+}
+
+#container .content{
+    text-align: center;
+}
+
+#container .nav{
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 10px;
+}
+
+#container .content article{
+    display: inline-block;
+    margin:1%;
+    box-shadow: 1px 1px rgba(0,0,0,0.2);
+    border: 1px solid #e7e4e4;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#container .content article img{
+    border-radius:5px;
+    cursor: pointer;
+}
+
+#container .content article h4{
+    text-align: left;
+}
+
+.loader{
+    display:block;
+    margin:5% auto;
+}

@@ -1,0 +1,39 @@
+<header>
+  <nav>
+      <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" routerLink="/" > <i class="fas fa-home"></i></a>
+          </li>
+        </ul>
+  </nav>
+  <div id="cart">
+    <p><span id="productsNumber">{{cartTotalProduct}}</span><i class="fas fa-shopping-cart"></i> MON PANIER </p>
+    <div class="content">
+      <ul id="productsList" *ngIf="!cartProducts">
+        <li id="empty" >Vide</li>
+      </ul>
+      <ul id="productsList" >
+          <li *ngFor="let cartProduct of cartProducts" class="product" id="product{{cartProduct.product}}" >{{cartProduct.name}} (x<span id="numberProduct{{cartProduct.product}}" >{{cartProduct.quantity}}</span>) <span class="badge badge-secondary" style="float:right;">{{cartProduct.price}} €</span></li>
+          <li *ngIf="cartProducts.length == 0">Vide</li>
+        </ul>
+      <p class="totalCart"  *ngIf="cartProducts.length > 0">
+        Total : <span id="totalCartPrice" >{{cartTotalPrice}}</span> €
+      </p><br>
+
+      <a  *ngIf="cartProducts.length > 0" routerLink="/cart" id="cartValidate" class="btn btn-success" style="float:right;color:white;" >Voir le panier</a>
+
+    </div>
+  </div>
+</header>
+<div id="container" class="container">
+      <!-- Product categories -->
+      <ul class="nav nav-pills justify-content-center" id="catgorie-nav">
+          <li class="nav-item" *ngFor="let category of productCategories" >
+            <a class="nav-link"  href="#" id="cat{{category.id}}" routerLink="product/{{category.id}}" routerLinkActive="active">{{category.name}}</a>
+          </li>
+      </ul>
+      <!-- /Product categories -->
+      <div class="content" id="content" >
+        <router-outlet></router-outlet>
+      </div>
+</div>
